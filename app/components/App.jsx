@@ -1,13 +1,12 @@
-import React     from 'react';
-import RecipeBox from './RecipeBox.jsx';
+import React     from 'react'
+import AddRecipe from '../containers/AddRecipe'
+import RecipeBox from '../containers/RecipeBox'
 
-export default class App extends React.Component {
-	render() {
-		return(
-			<div>
-			  <div>App</div>
-			  <RecipeBox/>
-			</div>
-		);
-	}
-}
+const App = () => (
+  <div>
+    <AddRecipe />
+    <RecipeBox />
+  </div>
+)
+
+export default App

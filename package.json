@@ -25,7 +25,10 @@
     "webpack-merge": "^0.10.0"
   },
   "dependencies": {
+    "node-uuid": "^1.4.7",
     "react": "^15.0.1",
-    "react-dom": "^15.0.1"
+    "react-dom": "^15.0.1",
+    "react-redux": "^4.4.4",
+    "redux": "^3.4.0"
   }
 }
