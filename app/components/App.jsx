@@ -1,10 +1,10 @@
-import React     from 'react'
-import AddRecipe from '../containers/AddRecipe'
-import RecipeBox from '../containers/RecipeBox'
+import React          from 'react'
+import RecipeBox      from '../containers/RecipeBox'
+import OpenFormRecipe from '../containers/OpenFormRecipe'
 
 const App = () => (
   <div>
-    <AddRecipe />
+    <OpenFormRecipe />
     <RecipeBox />
   </div>
 )
