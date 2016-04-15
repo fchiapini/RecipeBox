@@ -1,9 +1,11 @@
-import React     from 'react'
-import AddRecipe from '../containers/AddRecipe'
-import Modal     from 'react-modal'
+import React                      from 'react'
+import AddRecipe                  from '../containers/AddRecipe'
+import Modal                      from 'react-modal'
+import { Button } from 'react-bootstrap'
 
 const customStyles = {
   content : {
+    width                 : '50%',
     top                   : '50%',
     left                  : '50%',
     right                 : 'auto',
@@ -11,17 +13,17 @@ const customStyles = {
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)'
   }
-};
+}
 
 const RecipeWindow = ({ modalIsOpen, onClick, onClose }) => (
   <div>
-    <button onClick={() => onClick()}>Add Recipe</button>
+    <Button bsStyle="success" onClick={() => onClick()}>Add Recipe</Button>
     <Modal
       isOpen={modalIsOpen}
       onRequestClose={() => onClose()}
       style={customStyles} >
       <AddRecipe />
-      <button onClick={() => onClose()}>Close</button>
+      <Button bsStyle="danger" onClick={() => onClose()}>Close</Button>
     </Modal>
   </div>
 )
