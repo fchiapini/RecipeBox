@@ -44,7 +44,17 @@ const recipes = (state= [], action) => {
         }
 
         return recipe
-      }))    
+      }))
+    case 'SHOW_INGREDIENTS':
+      return (state.map(recipe => {
+        if(recipe.id === action.id) {
+          return Object.assign({}, recipe, {
+            viewIngredients: !recipe.viewIngredients
+          })
+        }
+
+        return recipe
+      }))      
     default:
       return state  
   }

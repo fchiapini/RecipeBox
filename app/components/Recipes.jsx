@@ -1,7 +1,7 @@
 import React  from 'react'
 import Recipe from './Recipe'
 
-const Recipes = ({ removeRecipe, updateRecipe, editRecipe, finishEditRecipe, recipes }) => (
+const Recipes = ({ recipes, removeRecipe, updateRecipe, editRecipe, finishEditRecipe, showIngredients }) => (
   <ul>
     {
       recipes.map(recipe =>
@@ -12,6 +12,7 @@ const Recipes = ({ removeRecipe, updateRecipe, editRecipe, finishEditRecipe, rec
 	        updateRecipe={updateRecipe}
 	        editRecipe={editRecipe}
 	        finishEditRecipe={finishEditRecipe}
+	        showIngredients={showIngredients}
 	      /> 
       )}
   </ul>

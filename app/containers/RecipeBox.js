@@ -1,6 +1,10 @@
-import { connect }                                                  from 'react-redux'
-import { removeRecipe, updateRecipe, editRecipe, finishEditRecipe } from '../actions'
-import Recipes                                                      from '../components/Recipes'
+import { connect }         from 'react-redux'
+import { removeRecipe,
+         updateRecipe,
+         editRecipe,
+         finishEditRecipe,
+         showIngredients } from '../actions'
+import Recipes             from '../components/Recipes'
 
 const mapStateToProps = (state) => {
 	console.log(state)
@@ -22,6 +26,9 @@ const mapDispatchToProps = (dispatch) => {
 		},
 		finishEditRecipe: (id) => {
       dispatch(finishEditRecipe(id))
+		},
+		showIngredients: (id) => {
+			dispatch(showIngredients(id))
 		}
 	}
 }

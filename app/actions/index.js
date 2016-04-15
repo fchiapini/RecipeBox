@@ -6,7 +6,8 @@ export const addRecipe = (recipe) => {
 		id: uuid.v4(),
 		title: recipe.title,
 		ingredients: recipe.ingredients,
-		editing: false
+		editing: false,
+		viewIngredients: false
 	}
 }
 
@@ -39,6 +40,13 @@ export const updateRecipe = (updatedRecipe) => {
 		id: updatedRecipe.id,
 		title: updatedRecipe.title,
 		ingredients: updatedRecipe.ingredients
+	}
+}
+
+export const showIngredients = (id) => {
+	return {
+		type: 'SHOW_INGREDIENTS',
+		id
 	}
 }
 
