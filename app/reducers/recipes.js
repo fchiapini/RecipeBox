@@ -1,6 +1,6 @@
 const recipes = (state= [], action) => {
   switch (action.type) {
-  	case 'CREATE':
+    case 'CREATE':
       return [ 
         ...state,
         {
@@ -25,6 +25,26 @@ const recipes = (state= [], action) => {
 
         return recipe;
       }))
+    case 'EDIT':
+      return (state.map(recipe => {
+        if(recipe.id === action.id) {
+          return Object.assign({}, recipe, {
+            editing: action.editing
+          })
+        }
+
+        return recipe
+      }))
+    case 'FINISH_EDIT':
+      return (state.map(recipe => {
+        if(recipe.id === action.id) {
+          return Object.assign({}, recipe, {
+            editing: action.editing
+          })
+        }
+
+        return recipe
+      }))    
     default:
       return state  
   }

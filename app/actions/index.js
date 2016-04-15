@@ -5,7 +5,8 @@ export const addRecipe = (recipe) => {
 		type: 'CREATE',
 		id: uuid.v4(),
 		title: recipe.title,
-		ingredients: recipe.ingredients
+		ingredients: recipe.ingredients,
+		editing: false
 	}
 }
 
@@ -16,8 +17,23 @@ export const removeRecipe = (id) => {
 	}
 }
 
+export const editRecipe = (id) => {
+	return {
+		type: 'EDIT',
+		id,
+		editing: true
+	}
+}
+
+export const finishEditRecipe = (id) => {
+	return {
+		type: 'FINISH_EDIT',
+		id,
+		editing: false
+	}
+}
+
 export const updateRecipe = (updatedRecipe) => {
-	console.log(updatedRecipe)
 	return {
 		type: 'UPDATE',
 		id: updatedRecipe.id,

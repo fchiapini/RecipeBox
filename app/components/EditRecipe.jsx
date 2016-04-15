@@ -1,6 +1,6 @@
 import React       from 'react'
 
-const EditRecipe = ({ id, title, ingredients, updateRecipe, editing }) => {
+const EditRecipe = ({ id, title, ingredients, updateRecipe, editing, finishEditRecipe }) => {
 	let inputTitle
   let inputIngredients
 
@@ -15,6 +15,7 @@ const EditRecipe = ({ id, title, ingredients, updateRecipe, editing }) => {
           updateRecipe({ id: id, title: inputTitle.value, ingredients: inputIngredients.value })
           inputTitle.value       = ''
           inputIngredients.value = ''
+          finishEditRecipe(id)
         }}>
           <input 
           ref={node => {

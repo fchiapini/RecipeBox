@@ -2,10 +2,10 @@ import React       from 'react'
 import Ingredients from './Ingredients'
 import EditRecipe  from './EditRecipe'
 
-const Recipe = ({ id, title, ingredients, removeRecipe, updateRecipe }) => (
+const Recipe = ({ id, title, ingredients, editing, removeRecipe, updateRecipe, editRecipe, finishEditRecipe }) => (
 	<li>
 	  {title} <span onClick={() => removeRecipe(id)}>x</span>
-	  <button onClick={() => removeRecipe(id)}>Edit Recipe</button>
+	  <button onClick={() => editRecipe(id)}>Edit Recipe</button>
 	  <Ingredients
 	    ingredients={ingredients}
 	  />
@@ -14,7 +14,8 @@ const Recipe = ({ id, title, ingredients, removeRecipe, updateRecipe }) => (
 	    title={title}
 	    ingredients={ingredients}
 	    updateRecipe={updateRecipe} 
-	    editing={true}
+	    editing={editing}
+	    finishEditRecipe={finishEditRecipe}
 	  />
 	</li>
 )
