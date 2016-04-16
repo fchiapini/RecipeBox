@@ -1,16 +1,28 @@
-import React       from 'react'
-import Ingredients from './Ingredients'
-import EditRecipe  from './EditRecipe'
+import React                                from 'react'
+import Ingredients                          from './Ingredients'
+import EditRecipe                           from './EditRecipe'
+import { Button, ListGroup, ListGroupItem } from 'react-bootstrap'
+
+const liStyle = {
+	margin: '15px'
+}
+
+const deleteButton = {
+  marginLeft: '5px'
+}
 
 const Recipe = ({ id, title, ingredients, editing, viewIngredients, removeRecipe, updateRecipe, editRecipe, finishEditRecipe, showIngredients }) => (
-	<li>
-	  <span onClick={() => showIngredients(id)}>{title}</span> <span onClick={() => removeRecipe(id)}>x</span>
-	  <button onClick={() => editRecipe(id)}>Edit Recipe</button>
+	<ListGroup style={liStyle}>
+	  <ListGroupItem href="#" onClick={() => showIngredients(id)}><h4>{title}</h4></ListGroupItem>         
 	  {
-      viewIngredients ?
-      <Ingredients
-	      ingredients={ingredients}
-	    />
+	    viewIngredients ?
+	    <div>
+	      <Ingredients
+		      ingredients={ingredients}
+		    />
+		    <Button bsStyle="primary" onClick={() => editRecipe(id)}>Edit Recipe</Button>
+		    <Button style={deleteButton} bsStyle="danger" onClick={() => removeRecipe(id)}>Delete</Button>
+	    </div>
 	    : null
 	  }
 	  { 
@@ -23,8 +35,8 @@ const Recipe = ({ id, title, ingredients, editing, viewIngredients, removeRecipe
 	        finishEditRecipe={finishEditRecipe}
 	      />
 	    : null
-	  }    
-	</li>
+	  }
+  </ListGroup>
 )
 
 export default Recipe

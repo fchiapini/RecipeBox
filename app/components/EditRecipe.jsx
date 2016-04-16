@@ -1,11 +1,16 @@
-import React from 'react'
+import React           from 'react'
+import { ButtonInput } from 'react-bootstrap'
 
 const EditRecipe = ({ id, title, ingredients, updateRecipe, finishEditRecipe }) => {
 	let inputTitle
   let inputIngredients
+  
+  const marginTop = {
+    marginTop: '10px'
+  }
 
 	return (
-    <div>
+    <div style={marginTop}>
       <form onSubmit={e => {
         e.preventDefault()
         if (!inputTitle.value.trim()) {
@@ -16,22 +21,26 @@ const EditRecipe = ({ id, title, ingredients, updateRecipe, finishEditRecipe }) 
         inputIngredients.value = ''
         finishEditRecipe(id)
       }}>
-        <input 
-        ref={node => {
-          inputTitle = node
-        }}
-        autoFocus={true}
-        defaultValue={title}
-       />
-        <input
+        <div className="form-group">
+          <input
+          type="text"
+          className="form-control"
+          autoFocus={true}
+          defaultValue={title}
+          ref={node => {
+            inputTitle = node
+          }}
+         />
+       </div>
+        <textarea
+        type="text"
+        className="form-control"
+        defaultValue={ingredients}
         ref={node => {
           inputIngredients = node
         }}
-        defaultValue={ingredients}
         />
-        <button type="submit">
-          Update Recipe
-        </button>
+        <ButtonInput style={marginTop} bsStyle="primary" type="submit" value="Update Recipe"/>
       </form>
     </div>
   ) 

@@ -2,7 +2,7 @@ import React  from 'react'
 import Recipe from './Recipe'
 
 const Recipes = ({ recipes, removeRecipe, updateRecipe, editRecipe, finishEditRecipe, showIngredients }) => (
-  <ul>
+  <ul className="list-unstyled">
     {
       recipes.map(recipe =>
 	      <Recipe

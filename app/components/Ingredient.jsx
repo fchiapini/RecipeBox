@@ -1,9 +1,11 @@
 import React from 'react'
 
 const Ingredient = ({ ingredient }) => (
-  <li>
-    {ingredient}
-  </li>
+		<tr>
+		  <td> 
+	      {ingredient}
+	    </td>  
+		</tr>	
 )
 
 export default Ingredient
